@@ -6,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.AddSingleton<WeatherForecastRepository>();
+builder.Services.AddSingleton<PersonaService>();
+builder.Services.AddSingleton<PersonaRepository>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
