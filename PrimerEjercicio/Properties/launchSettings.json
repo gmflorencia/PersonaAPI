@@ -11,7 +11,7 @@
       "applicationUrl": "https://localhost:7034;http://localhost:5034"
     },
     "IIS Express": {
-      "commandName": "IISExpress",
+      "commandName": "PrimerEjercicio",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
