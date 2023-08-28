@@ -1,11 +1,14 @@
 ﻿using PrimerEjercicio.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PrimerEjercicio.Data
 {
     public class PersonaRepository
     {
         private readonly List<Persona> _repository = new List<Persona>();
+        private int _nextId = 1;
+
 
         public PersonaRepository()
         {
@@ -19,20 +22,20 @@ namespace PrimerEjercicio.Data
         {
             return _repository;
         }
-       /* public IEnumerable<PersonaRepository> GetAllById()
-        {
-            return Enumerable.Range(1, 5).Select(index => new Persona
-            {
-                Id = DateTime.Now.AddDays(index),
-                Nombre = Random.Shared.Next(-20, 55),
-                Dni = Summaries[Random.Shared.Next(Summaries.Length)]
-                FechaAlta =
-            })
-            .ToArray();
-        }*/
         public void AddPersona(Persona persona)
         {
+            persona.Id = _nextId++;
             _repository.Add(persona);
         }
+        public void UpdatePersona(Persona persona)
+        {
+            var existingPersona = _repository.FirstOrDefault(t => t.Id == persona.Id);
+            if (existingPersona != null)
+            {
+                existingPersona.Nombre = persona.Nombre;
+                existingPersona.Dni = persona.Dni;
+            }
+        }
     }
+   
 }

@@ -14,9 +14,13 @@ namespace PrimerEjercicio.Services
         {
             return _repository.GetAll();
         }
-        public void AddPersona(Persona persona)
+        public void AddPersona(Persona persona)    
         {
             _repository.AddPersona(persona);
+        }
+        public void UpdatePersona(Persona persona)
+        {
+            _repository.UpdatePersona(persona);
         }
     }
 }

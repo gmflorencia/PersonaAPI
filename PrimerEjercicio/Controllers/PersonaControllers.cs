@@ -32,5 +32,22 @@ namespace PrimerEjercicio.Controllers
             return _service.GetAll();
 
         }
+        [HttpPost]
+        public IActionResult CreatePersona(Persona persona)
+        {
+            _service.AddPersona(persona);
+            //return CreatedAtAction(nameof(GetPersona), new { id = persona.Id }, persona);
+            return NoContent();
+        }
+        [HttpPut("{id}")]
+        public IActionResult UpdatePersona(int id, Persona persona)
+        {
+            if (id != persona.Id)
+            {
+                return BadRequest();
+            }
+            _service.UpdatePersona(persona);
+            return NoContent();
+        }
     }
 }
