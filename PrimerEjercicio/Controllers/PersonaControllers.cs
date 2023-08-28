@@ -49,5 +49,11 @@ namespace PrimerEjercicio.Controllers
             _service.UpdatePersona(persona);
             return NoContent();
         }
+        [HttpDelete("{id}")]
+        public IActionResult DeletePersona(int id)
+        {
+            _service.DeletePersona(id);
+            return NoContent();
+        }
     }
 }

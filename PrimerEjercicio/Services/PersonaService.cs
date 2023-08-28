@@ -22,5 +22,9 @@ namespace PrimerEjercicio.Services
         {
             _repository.UpdatePersona(persona);
         }
+        public void DeletePersona(int id)
+        {
+            _repository.DeletePersona(id);
+        }
     }
 }
